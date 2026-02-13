@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    min-width: 400px;
+    max-width: 500px;
+}
+
+.stopwatch {
+    text-align: center;
+}
+
+.stopwatch h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #4a5568;
+    font-weight: 300;
+}
+
+.time-display {
+    font-size: 4em;
+    font-weight: 300;
+    color: #2d3748;
+    margin: 30px 0;
+    font-family: 'Courier New', monospace;
+    background: #f7fafc;
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid #e2e8f0;
+    letter-spacing: 2px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 100px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn.primary {
+    background: #4299e1;
+    color: white;
+}
+
+.btn.primary:hover:not(:disabled) {
+    background: #3182ce;
+}
+
+.btn.primary.stop {
+    background: #e53e3e;
+}
+
+.btn.primary.stop:hover:not(:disabled) {
+    background: #c53030;
+}
+
+.btn.secondary {
+    background: #ed8936;
+    color: white;
+}
+
+.btn.secondary:hover:not(:disabled) {
+    background: #dd6b20;
+}
+
+.btn.tertiary {
+    background: #718096;
+    color: white;
+}
+
+.btn.tertiary:hover:not(:disabled) {
+    background: #4a5568;
+}
+
+.btn.lap {
+    background: #38a169;
+    color: white;
+}
+
+.btn.lap:hover:not(:disabled) {
+    background: #2f855a;
+}
+
+.lap-section {
+    margin-top: 30px;
+}
+
+.lap-section h3 {
+    color: #4a5568;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.lap-times {
+    max-height: 300px;
+    overflow-y: auto;
+    background: #f7fafc;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.lap-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    margin: 5px 0;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid #4299e1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.lap-number {
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.lap-time-value {
+    font-family: 'Courier New', monospace;
+    color: #2d3748;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        margin: 20px;
+        padding: 30px 20px;
+        min-width: auto;
+    }
+    
+    .time-display {
+        font-size: 2.5em;
+        padding: 15px;
+    }
+    
+    .controls {
+        gap: 10px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+        min-width: 80px;
+    }
+    
+    .stopwatch h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+}
