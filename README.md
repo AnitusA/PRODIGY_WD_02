@@ -18,7 +18,6 @@ A modern, interactive stopwatch web application built with HTML, CSS, and JavaSc
 - Animated lap time entries
 
 ### Advanced Features
-- **Keyboard Shortcuts**:
   - `Space` - Start/Stop toggle
   - `P` - Pause
   - `R` - Reset
